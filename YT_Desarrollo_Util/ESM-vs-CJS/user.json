@@ -1,0 +1,13 @@
+
+{
+    "users":[
+        {
+            "nombre":"Jose",
+            "canal":"Desarrollo Útil"
+        },
+        {
+            "nombre":"Pablo",
+            "canal":"Desarrollo Útil"
+        }
+    ]
+}
