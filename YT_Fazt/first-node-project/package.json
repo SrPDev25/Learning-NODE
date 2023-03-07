@@ -1,0 +1,26 @@
+{
+  "name": "first-node-project",
+  "version": "0.0.1",
+  "description": "my first project",
+  "main": "app.js",
+  "scripts": {
+    "lunch": "node ./src/app.js",
+    "dev": "nodemon ./src/app.js"
+
+  },
+  "keywords": [
+    "first",
+    "manzana",
+    "project",
+    "nodejs",
+    "learn"
+  ],
+  "author": "me",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
