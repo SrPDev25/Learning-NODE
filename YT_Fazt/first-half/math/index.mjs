@@ -9,13 +9,14 @@ function multiply(x,y){
     return x*y
 }
 
-function divide(x,y){
+export function divide(x,y){
     return x/y
 }
 
-module.exports={
+/* module.exports={
     add,
     substract,
     multiply,
     divide
-}
+} */
+
