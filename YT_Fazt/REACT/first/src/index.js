@@ -27,7 +27,8 @@ const Counter=()=>{
   useEffect(()=>{
     setTimeout(()=>{
       setCounter(count+1)
-    },1000)
+    })
+
   },[count])
 
   return <div><h1>Counter: {count}</h1>
