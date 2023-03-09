@@ -1,0 +1,17 @@
+{
+    "User1":{
+        "id":1,
+        "name":"Juam",
+        "image":"https://robohash.org/user1?set=set4"
+    },
+    "User2":{
+        "id":2,
+        "name":"Pepe",
+        "image":"https://robohash.org/user2?set=set4"
+    },
+    "User3":{
+        "id":3,
+        "name":"Si",
+        "image":"https://robohash.org/user3?set=set4"
+    }
+}
