@@ -1,34 +1,16 @@
-import './App.css'
-import TaskList from './TaskList'
-import TaskForm from './TaskForm'
-import { tasks as data } from "./task";
-import { useEffect, useState } from 'react';
+import "./App.css";
+import TaskList from "./components/TaskList";
+import TaskForm from "./components/TaskForm";
+
 
 
 function App() {
-
-  const [task, setTask] = useState([]);
-
-  useEffect(() => {
-    setTask(data);
-  }, []);
-
-  function createTask(title){
-    const newTask={
-      title:title,
-      id:(task.lenght+1),
-      description:'example'
-  }
-    setTask([...task,newTask])
-
-  }
-
   return (
     <div className="App">
-      <TaskForm createTask={createTask} length={task}/>
-      <TaskList tasks={task}/>
+      <TaskForm />
+      <TaskList />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
