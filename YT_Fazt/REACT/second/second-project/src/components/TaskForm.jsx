@@ -5,7 +5,7 @@ import {TaskContext} from '../context/TaskContext'
 
 export function TaskForm() {
   const {createTask} = useContext(TaskContext)
-  const [title, setTitle] = useState("");
+  const [title, setTitle]    = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
