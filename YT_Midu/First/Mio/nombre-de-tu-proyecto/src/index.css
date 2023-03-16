@@ -1,13 +1,27 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('./styles/leftStyles.css');
+
+:root{
+  --size-head:100px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.head{
+  background: white;
+  border-bottom: 5px solid rgb(177, 228, 229);/*You can choose which direction of the element have border changing the width or just making a border in this direction*/
+  height:var(--size-head);
+  width: 100%;
+  border: 2px, black;
+  top: 0;
+  left:0;
+  right: 0;
+  position: fixed;
 }
+
+.head img{
+  position: absolute;
+  bottom: 50%;/*when you indicate the distance of the element, css will use the most near border of the element as the reference*/
+  transform: translateY(50%);/*if you want yo fix distance, that code move the element without touching the margins */
+  left: 3%;
+}
+
+
+

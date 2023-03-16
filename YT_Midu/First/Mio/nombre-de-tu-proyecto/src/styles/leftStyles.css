@@ -1,0 +1,37 @@
+.left{
+    border-right: 1px solid rgb(201, 195, 195);
+    left: 0;
+    bottom: 0;
+    top: calc(var(--size-head) + 5px);
+    position:fixed;
+    width: 40%;
+    height: auto;
+    overflow:auto; /*Como interactua los elementos dentro de un div con el div padre*/
+                  /**
+                  *Visible: Default, if the elements overflow the main div, they overlap other elements outside the parent div
+                  *Hiden: Same as visible, but the elements overflow the main div, only are visible inside their parent div 
+                  *Scroll: Generate a scroll bars to watch the overflow elements, which only are visible inside the div
+                  *Auto: same as Scroll, but only show the scroll bars where is necesary
+                  *Overflow-x and -y: only control the overflow at one direction
+                  */
+
+    font-size: 2em;
+  }
+  
+  .left .cardMedia{
+    height: 70%;
+    width: 40px;
+  }
+  
+  .cardsBundle{
+    padding: 7%;
+    padding-left: 10%;
+  }
+  
+  /*To make a separation between cards i made this style*/
+  .card{
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
