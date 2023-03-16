@@ -1,5 +1,5 @@
 import { Logo } from "./elements/components/Logo";
-import {LeftModule} from './elements/modules/LeftModule';
+import {LeftModule} from './elements/organism/LeftModule';
 
 const Head = () => {
   return (

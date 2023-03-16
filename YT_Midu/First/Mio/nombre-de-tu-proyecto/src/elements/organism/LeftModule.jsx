@@ -12,12 +12,18 @@ const pokemonSetSize = 10;
  */
 export const LeftModule = () => {
   const [set, setSet] = useState(0);
-  const [pokemons, setPokemons] = useState([pokedex]);
+  const [pokemons, setPokemons] = useState([]);
+  //hola chatGPt, un saludo
   //When the set change, recharge all the pokemons
   useEffect(() => {
-    //Not in use
-    pokedex(set);
-  }, [set]);
+    //pokedex is a promise, then, you have to use 
+    pokedex(0)
+      .then((value) => {
+        console.log(value);
+        setPokemons(value);
+      })
+      .catch((error) => console.log(error));
+  }, [set]);//useEffect, recharge when set change
 
   return (
     <>
@@ -29,6 +35,10 @@ export const LeftModule = () => {
 };
 
 const pokedex = (set) =>
+  /**
+   * All the axio and fetch http petitions, return a promise.
+   * If the http petitions is slow, with the promiese the request will be in line
+   */
   axios
     //url
     .get("https://pokeapi.co/api/v2/pokemon", {
@@ -38,19 +48,29 @@ const pokedex = (set) =>
         limit: pokemonSetSize,
       },
     })
-    .then((response) => {
-      //OnBuild
-      for (var i = 0; i < pokemonSetSize; i++) {
-        const poke = response.data.results[i];
+    //Made async the action of the promise
+    .then(async (response) => {
+      //with this, the promise can be referenced
+      const promises = response.data.results.map((poke, index) =>
         //Want to set the info i need into the json directly
-        response.data.results[i] = {
-          ...poke,
-          info: pokemonBasicInfo(poke.url),
-        };
-        //console.log(response.data.results[i]);
-      }
-      console.log(response.data);
-      return response.data;
+        pokemonBasicInfo(poke.url)
+          .then((info) => {
+            response.data.results[index] = {
+              ...poke,
+              info,
+            };
+          })
+          .catch((error) => console.log(error))
+      );
+      //that made wait the function's return until the promises in Promise.all are finisheds
+      await Promise.all(promises);
+
+      const arrayPersona = Object.keys(response.data.results).map((key) => {
+        return response.data.results[key];
+      });
+
+      //console.log(arrayPersona);
+      return arrayPersona;
     })
     .catch((err) => {
       console.log(err);
@@ -65,13 +85,13 @@ const pokemonBasicInfo = (url) =>
     var info = {};
 
     info = {
-      ...info,
       url: response.data.sprites.front_default,
       ability1: response.data.abilities[0].ability.name,
       ability2: response.data.abilities[1].ability.name,
       move1: response.data.moves[0].move.name,
       move2: response.data.moves[1].move.name,
     };
+
     return info;
   });
 // Borrar
@@ -85,16 +105,15 @@ const pokemonBasicInfo = (url) =>
     color: theme.palette.text.secondary,
   })); */
 
-const PokemonCardsBundle = ({pokemons}) => {
+const PokemonCardsBundle = (prop) => {
   return (
     <div className="cardsBundle">
       {/*Sparcing supose to be the card's separations, but didn't found as i expect, I edited the separation at the .css */}
       <Grid container rowSpacing={0} columnSpacing={0}>
-        {pokemons.map((pokemon) => {
-          console.log(pokemon)
+        {prop.pokemons.map((pokemon) => {
           return (
-            <Grid xs={5}>
-              <PokemonCard name={"hola"} />
+            <Grid item xs={5} key={pokemon.name}>
+              <PokemonCard name={pokemon.name} url={pokemon.info.url} />
             </Grid>
           );
         })}

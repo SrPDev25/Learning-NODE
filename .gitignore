@@ -6,6 +6,7 @@
 .pnp.js
 *.pack
 **/.cache/
+**/.cache/**
 **/babel-loader
 
 # testing

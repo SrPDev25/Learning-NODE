@@ -18,7 +18,7 @@ import {
 export function PokemonCard({ url, name }) {
     return (
       <div className="card">
-        <Card sx={{backgroundColor:"red", maxWidth: 160, maxHeight: 180 }}>
+        <Card sx={{ maxWidth: 160, maxHeight: 180 }}>
           <CardActionArea>
             <CardMedia
               component="img"
