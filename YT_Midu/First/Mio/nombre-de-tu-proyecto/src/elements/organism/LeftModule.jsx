@@ -65,26 +65,24 @@ const pokedex = (set) =>
       //that made wait the function's return until the promises in Promise.all are finisheds
       await Promise.all(promises);
 
-      const arrayPersona = Object.keys(response.data.results).map((key) => {
+
+      const arrayPokemones = Object.keys(response.data.results).map((key) => {
         return response.data.results[key];
       });
-
-      //console.log(arrayPersona);
-      return arrayPersona;
+      return arrayPokemones;
     })
     .catch((err) => {
       console.log(err);
     });
 
 /**
- *
- * @url es la url de la api donde se localizan todos los datos internos del pokemon
+ * @url the url where the pokemon's info are
  */
 const pokemonBasicInfo = (url) =>
+  //Http call with axio
   axios.get(url).then((response) => {
-    var info = {};
-
-    info = {
+    //taking all the basic info I want
+    const info = {
       url: response.data.sprites.front_default,
       ability1: response.data.abilities[0].ability.name,
       ability2: response.data.abilities[1].ability.name,
@@ -94,22 +92,13 @@ const pokemonBasicInfo = (url) =>
 
     return info;
   });
-// Borrar
-//No me queda claro si sirve para algo
-/*   //The item Material UI request to found properly
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  })); */
 
 const PokemonCardsBundle = (prop) => {
   return (
     <div className="cardsBundle">
       {/*Sparcing supose to be the card's separations, but didn't found as i expect, I edited the separation at the .css */}
       <Grid container rowSpacing={0} columnSpacing={0}>
+        {/*Pokemons (array) can be mapped. While 'foreach' cannot return elements, 'map' can.*/}
         {prop.pokemons.map((pokemon) => {
           return (
             <Grid item xs={5} key={pokemon.name}>
