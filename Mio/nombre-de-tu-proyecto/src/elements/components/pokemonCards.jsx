@@ -24,6 +24,7 @@ export function PokemonCard({ url: img, name }) {
               height="110"
               width="40"
               image={img}
+              style={{height:'80px',}}
               alt={firstUpercase(name)}
             />
             <CardContent>
