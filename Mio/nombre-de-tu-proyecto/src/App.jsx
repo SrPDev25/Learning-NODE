@@ -1,17 +1,12 @@
-import { Logo } from "./elements/components/Logo";
-import {LeftModule} from './elements/organism/LeftModule';
 
-const Head = () => {
-  return (
-    <div className="head">
-      <Logo width="80" />
-    </div>
-  );
-};
+import {LeftModule} from './elements/organism/LeftModule';
+import { Head } from "./elements/organism/Head";
+
 
 
 
 function App() {
+  
   return (
     <>
     <div className="App">

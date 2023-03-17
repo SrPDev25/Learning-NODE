@@ -1,6 +1,5 @@
 export const Logo = (width) => {
   const size = width.width + "px";
-  console.log(size);
   return (
     <img
       alt="logo"
