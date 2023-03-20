@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import { PokemonCard } from "../molecule/pokemonCards";
+import { PokemonCard } from "./pokemonCards";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import {useSelector} from 'react-redux'
@@ -91,7 +91,7 @@ export const PokemonCardsBundle = (prop) => {
         {prop.pokemons.map((pokemon) => {
           return (
             <Grid item xs={5} key={pokemon.name}>
-              <PokemonCard name={pokemon.name} url={pokemon.info.url} />
+              <PokemonCard info={pokemon}/>
             </Grid>
           );
         })}

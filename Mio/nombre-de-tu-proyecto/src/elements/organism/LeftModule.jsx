@@ -1,4 +1,4 @@
-import { Gallery} from "../molecule/pokemonGalery";
+import {Gallery} from "../molecule/pokemonGallery";
 
 
 
