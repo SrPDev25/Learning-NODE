@@ -1,9 +1,6 @@
 import {
   Card,
   CardActionArea,
-  CardMedia,
-  Typography,
-  CardContent,
 } from "@mui/material";
 import { PokemonCardImg } from "../atom/pokemonCardImg";
 
@@ -30,7 +27,7 @@ export function PokemonCard({ info }) {
             height:"40px",
             width:"100%"
           }}>
-            <p style={{marginLeft:"50%", transform:"translateX(-50%)",paddingTop:"10px",textAlign:"center"}}>{firstUpercase(info.name)}</p>
+            <p style={{width:"100%",paddingTop:"10px",textAlign:"center",fontWeight:"bold",fontSize:"17px"}}>{firstUpercase(info.name)}</p>
           </div>
         </CardActionArea>
       </Card>
