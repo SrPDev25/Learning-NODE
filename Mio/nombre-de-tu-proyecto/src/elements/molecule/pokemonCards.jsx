@@ -14,13 +14,13 @@ import { firstUpercase } from "../tools/tools";
  */
 export function PokemonCard({ info }) {
     const basicInfo=info.info
-  
+    console.log(info)
   return (
     <div className="card">
       <Card sx={{ maxWidth: 160, maxHeight: 180 }}>
         <CardActionArea>
           
-          <PokemonCardImg url={basicInfo.url} name={info.name}/>
+          <PokemonCardImg url={basicInfo.sprites} name={info.name}/>
           <hr style={{marginRight:"5px", marginLeft:"5px", border:"1px solid"}}/>
           <div style={{
             backgroundColor:"red",

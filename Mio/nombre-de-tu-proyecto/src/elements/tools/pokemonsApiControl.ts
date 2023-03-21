@@ -1,4 +1,5 @@
 import axios from "axios";
+import { AxiosResponse } from "axios";
 
 export const pokedex = (set) =>
   /**
@@ -40,28 +41,50 @@ export const pokedex = (set) =>
       console.log(err);
     });
 
+    /**
+     * An interface that i use as template
+     */
+interface basicInfo {
+  sprites?:{
+    front_default:string;
+    };
+  ability1?: Array<abilities>;
+  move1?: Array<move>;
+  move2?: Array<move>;
+}
+
+interface abilities{
+    ability?:{
+        name:string;
+    };
+}
+
+interface move{
+    move?:{
+        name:string;
+    }
+}
+
+
+
 /**
  * @url the url where the pokemon's info are
  */
 const pokemonBasicInfo = (url) =>
   //Http call with axio
-  axios.get(url).then((response) => {
-    //taking all the basic info I want
-    interface info{
-        url:string;
-        ability1?:string;
-        ability2?:string;
-        move1?:string;
-        move2?:string;
-    }
-
-    info = {
-      url: response.data.sprites.front_default,
-      ability1: response.data.abilities[0].ability.name,
-      ability2: response.data.abilities[1].ability.name,
-      move1: response.data.moves[0].move.name,
-      move2: response.data.moves[1].move.name,
-    };
-
-    return info;
-  });
+  axios
+    .get(url)
+    .then((response) => {
+      //taking all the basic info I want
+      //console.log(response.data);
+        
+      const basicInfo :basicInfo = {
+        sprites: response.data.sprites.front_default,
+        ability1: response.data.abilities,
+        move1:response.data.moves,
+      };
+      return basicInfo;
+    })
+    .catch((error) => {
+      console.error(error);
+    });

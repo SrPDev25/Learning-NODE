@@ -13,12 +13,12 @@ const reducer = (state = initialState, action) => {
     case SetSiguiente:
       return {
         ...state,
-        set: state.set + 1,
+        set: state.set + 10,
       };
     case SetAnterior:
       return {
         ...state,
-        set: state.set - 1,
+        set: state.set - 10,
       };
     case SetReset:
       return {
