@@ -2,26 +2,29 @@ import { Grid } from "@mui/material";
 import { PokemonCard } from "./pokemonCards";
 import { pokedex } from "../tools/pokemonsApiControl.ts";
 import { useEffect, useState } from "react";
+import { store } from "../tools/reducerControl";
 import {useSelector} from 'react-redux'
 
 
 export const Gallery = () => {
   const set = useSelector((state) => state.set);
+  const state=useSelector((state)=>state)
   const [pokemons, setPokemons] = useState([]);
-  //hola chatGPt, un saludo
   //When the set change, recharge all the pokemons
   useEffect(() => {
     //pokedex is a promise, then, you have to use
-    console.log(set)
-    
     pokedex(set)
       .then((value) => {
         setPokemons(value);
-        console.log(value)
       })
       .catch((error) => console.log(error));
       
   }, [set]); //useEffect, recharge when set change
+
+  /* useEffect(()=>{
+    
+    store.dispatch()
+  },[]) */
 
   return <PokemonCardsBundle pokemons={pokemons}/>
 };

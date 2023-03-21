@@ -41,29 +41,6 @@ export const pokedex = (set) =>
       console.log(err);
     });
 
-    /**
-     * An interface that i use as template
-     */
-interface basicInfo {
-  sprites?:{
-    front_default:string;
-    };
-  ability1?: Array<abilities>;
-  move1?: Array<move>;
-  move2?: Array<move>;
-}
-
-interface abilities{
-    ability?:{
-        name:string;
-    };
-}
-
-interface move{
-    move?:{
-        name:string;
-    }
-}
 
 
 
@@ -78,10 +55,11 @@ const pokemonBasicInfo = (url) =>
       //taking all the basic info I want
       //console.log(response.data);
         
-      const basicInfo :basicInfo = {
+      const basicInfo = {
         sprites: response.data.sprites.front_default,
         ability1: response.data.abilities,
-        move1:response.data.moves,
+        move1:response.data.moves[0].move.name,
+        
       };
       return basicInfo;
     })

@@ -14,7 +14,6 @@ import { firstUpercase } from "../tools/tools";
  */
 export function PokemonCard({ info }) {
     const basicInfo=info.info
-    console.log(info)
   return (
     <div className="card">
       <Card sx={{ maxWidth: 160, maxHeight: 180 }}>

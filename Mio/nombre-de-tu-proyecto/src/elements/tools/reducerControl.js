@@ -5,21 +5,29 @@ export const SetSiguiente = "NEXT_SET";
 export const SetAnterior = "LAST_SET";
 export const SetReset = "RESET_SET";
 
+
 const initialState = {
   set: 0,
+  maxSize: 1000,
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SetSiguiente:
-      return {
-        ...state,
-        set: state.set + 10,
-      };
+      if (state.set <= state.maxSize - 10) {
+        return {
+          ...state,
+          set: state.set + 10,
+        };
+      } else return state;
     case SetAnterior:
-      return {
-        ...state,
-        set: state.set - 10,
-      };
+      if (state.set > 0) {
+        return {
+          ...state,
+          set: state.set - 10,
+        };
+      } else {
+        return { ...state, set: 0 };
+      }
     case SetReset:
       return {
         ...state,
