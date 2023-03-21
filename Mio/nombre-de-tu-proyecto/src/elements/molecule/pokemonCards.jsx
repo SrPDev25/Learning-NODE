@@ -30,7 +30,7 @@ export function PokemonCard({ info }) {
             height:"40px",
             width:"100%"
           }}>
-            
+            <p style={{marginLeft:"50%", transform:"translateX(-50%)",paddingTop:"10px",textAlign:"center"}}>{firstUpercase(info.name)}</p>
           </div>
         </CardActionArea>
       </Card>
@@ -38,20 +38,3 @@ export function PokemonCard({ info }) {
   );
 }
 
-{
-  /* <CardActionArea>
-            <CardMedia
-              component="img"
-              height="110"
-              width="40"
-              image={img}
-              style={{height:'80px',}}
-              alt={firstUpercase(name)}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {firstUpercase(name)}
-              </Typography>
-            </CardContent>
-          </CardActionArea> */
-}
