@@ -5,6 +5,7 @@ import { PokemonContentText } from "../atom/MoveText";
 import { PokemonCardImg } from "../atom/pokemonCardImg";
 
 import { firstUpercase } from "../tools/tools";
+import { MovesBundle } from "./movesBundle";
 
 /**
  *
@@ -30,16 +31,7 @@ export function PokemonCard({ info }) {
             <Line type="short" />
             <CardTitlePokemon title="Moves" fontSize="13" />
 
-            <Box display={"flex"} justifyContent="center" gap={1} marginTop="5px" marginBottom="5px">
-              <PokemonContentText
-                text={basicInfo.moves[0].move.name}
-                color="yellow"
-              />
-              <PokemonContentText
-                text={basicInfo.moves[1].move.name}
-                color="yellow"
-              />
-            </Box>
+            <MovesBundle moves={basicInfo.moves}/>
           </div>
         </CardActionArea>
       </Card>

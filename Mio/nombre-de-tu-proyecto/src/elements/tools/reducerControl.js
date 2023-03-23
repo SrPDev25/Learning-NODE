@@ -25,7 +25,7 @@ export const SetMaxSize = (maxSize) => {
 
 const initialState = {
   set: 0,
-  maxSize: 1000,
+  maxSize: 0,
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {

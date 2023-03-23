@@ -21,7 +21,7 @@ const useStyle = makeStyles({
     objectFit: "contain",
     border: "2px solid transparent",
     marginTop: "50%",
-    transform: "translateY(-50%)",
+    transform: "translateY(-60%)",
   },
 });
 

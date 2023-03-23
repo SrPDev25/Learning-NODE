@@ -1,7 +1,6 @@
 
 
 export const PokemonContentText=(prop)=>{
-    console.log(prop)
     return <div
                 style={{
                   background: prop.color,
@@ -12,7 +11,9 @@ export const PokemonContentText=(prop)=>{
                   overflow: "hidden",
                   padding: "5px",
                 }}
+
+                key={prop.index}
               >
-                <p style={{ margin: "0px" }}>{prop.text}</p>
+                <p  style={{ margin: "0px" }}>{prop.text}</p>
               </div>
 }

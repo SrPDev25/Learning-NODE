@@ -29,9 +29,7 @@ export const Gallery = () => {
         },
       })
       .then((response) => {
-
-        /* //await Promise.all(promise); */
-        console.log(typeof response.data.count, response.data.count)
+        //set the new max size
         store.dispatch(SetMaxSize(response.data.count));
       }).catch((error)=>console.log(error));
       //store.dispatch({ ...state, maxSize: });
