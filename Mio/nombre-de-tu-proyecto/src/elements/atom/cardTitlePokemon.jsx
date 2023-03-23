@@ -1,5 +1,6 @@
 
 
-export const CardTitlePokemon=(title)=>{
-    return <p style={{width:"100%",paddingTop:"10px",textAlign:"center",fontWeight:"bold",fontSize:"17px"}}>{title.title}</p>
+export const CardTitlePokemon=(data)=>{
+    const fontSize=data.fontSize+"px"
+    return <p style={{width:"100%",marginTop:"0px",marginBottom:"0px",textAlign:"center",fontWeight:"bold",fontSize:fontSize}}>{data.title}</p>
 }

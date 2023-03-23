@@ -19,6 +19,7 @@ export const Gallery = () => {
       .catch((error) => console.log(error));
   }, [set]); //useEffect, recharge when set change
 
+  //Charge at the general load the max size of the api info
   useEffect(() => {
     axios
       .get("https://pokeapi.co/api/v2/pokemon", {
@@ -35,12 +36,11 @@ export const Gallery = () => {
       }).catch((error)=>console.log(error));
       //store.dispatch({ ...state, maxSize: });
       
-  },[]);
-
-
+  });
 
   return <PokemonCardsBundle pokemons={pokemons} />;
 };
+
 
 export const PokemonCardsBundle = (prop) => {
   return (

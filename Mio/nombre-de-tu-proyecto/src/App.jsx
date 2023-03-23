@@ -1,18 +1,14 @@
-
-import {LeftModule} from './elements/organism/LeftModule';
 import { Head } from "./elements/organism/Head";
-
-
+import { Content } from "./elements/organism/Content";
 
 
 function App() {
-  
   return (
     <>
-    <div className="App">
-      <Head />
-      <LeftModule className="left"/>
-    </div>
+      <div className="App">
+        <Head/>
+        <Content/>
+      </div>
     </>
   );
 }

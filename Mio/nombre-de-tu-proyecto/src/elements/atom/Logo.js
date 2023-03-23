@@ -3,7 +3,7 @@ export const Logo = (width) => {
   return (
     <img
       alt="logo"
-      src="https://mir-s3-cdn-cf.behance.net/projects/404/6ec4b7102615209.Y3JvcCwxMTE2LDg3Myw3NjUsMjkw.png"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1200px-Pok%C3%A9_Ball_icon.svg.png"
       width={size}
     />
   );
