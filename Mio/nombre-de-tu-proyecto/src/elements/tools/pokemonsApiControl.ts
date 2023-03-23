@@ -57,8 +57,8 @@ const pokemonBasicInfo = (url) =>
         
       const basicInfo = {
         sprites: response.data.sprites.front_default,
-        ability1: response.data.abilities,
-        move1:response.data.moves[0].move.name,
+        abilities: response.data.abilities,
+        moves:response.data.moves,
         
       };
       return basicInfo;

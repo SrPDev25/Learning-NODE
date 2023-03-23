@@ -2,13 +2,12 @@ import { Grid } from "@mui/material";
 import { PokemonCard } from "./pokemonCards";
 import { pokedex } from "../tools/pokemonsApiControl.ts";
 import { useEffect, useState } from "react";
-import { store } from "../tools/reducerControl";
-import {useSelector} from 'react-redux'
-
+import { store, SetMaxSize } from "../tools/reducerControl";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 export const Gallery = () => {
   const set = useSelector((state) => state.set);
-  const state=useSelector((state)=>state)
   const [pokemons, setPokemons] = useState([]);
   //When the set change, recharge all the pokemons
   useEffect(() => {
@@ -18,18 +17,30 @@ export const Gallery = () => {
         setPokemons(value);
       })
       .catch((error) => console.log(error));
-      
   }, [set]); //useEffect, recharge when set change
 
-  /* useEffect(()=>{
-    
-    store.dispatch()
-  },[]) */
+  useEffect(() => {
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon", {
+        params: {
+          offset: set,
+          limit: 10,
+        },
+      })
+      .then((response) => {
 
-  return <PokemonCardsBundle pokemons={pokemons}/>
+        /* //await Promise.all(promise); */
+        console.log(typeof response.data.count, response.data.count)
+        store.dispatch(SetMaxSize(response.data.count));
+      }).catch((error)=>console.log(error));
+      //store.dispatch({ ...state, maxSize: });
+      
+  },[]);
+
+
+
+  return <PokemonCardsBundle pokemons={pokemons} />;
 };
-
-
 
 export const PokemonCardsBundle = (prop) => {
   return (
@@ -40,7 +51,7 @@ export const PokemonCardsBundle = (prop) => {
         {prop.pokemons.map((pokemon) => {
           return (
             <Grid item xs={5} key={pokemon.name}>
-              <PokemonCard info={pokemon}/>
+              <PokemonCard info={pokemon} />
             </Grid>
           );
         })}

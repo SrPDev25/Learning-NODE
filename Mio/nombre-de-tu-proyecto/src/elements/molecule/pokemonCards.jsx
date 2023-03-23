@@ -2,6 +2,7 @@ import {
   Card,
   CardActionArea,
 } from "@mui/material";
+import { CardTitlePokemon } from "../atom/cardTitlePokemon";
 import { PokemonCardImg } from "../atom/pokemonCardImg";
 
 import { firstUpercase } from "../tools/tools";
@@ -26,7 +27,7 @@ export function PokemonCard({ info }) {
             height:"40px",
             width:"100%"
           }}>
-            <p style={{width:"100%",paddingTop:"10px",textAlign:"center",fontWeight:"bold",fontSize:"17px"}}>{firstUpercase(info.name)}</p>
+            <CardTitlePokemon title={firstUpercase(info.name)}/>
           </div>
         </CardActionArea>
       </Card>
