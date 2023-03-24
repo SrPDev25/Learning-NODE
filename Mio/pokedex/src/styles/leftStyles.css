@@ -2,7 +2,7 @@
     border-right: 1px solid rgb(201, 195, 195);
     left: 0;
     bottom: 0;
-    top: calc(var(--size-head) + 5px);
+    top: calc(var(--size-head) + 12.5px);
     position:fixed;
     width: 50%;
     height: auto;
