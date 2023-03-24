@@ -1,7 +1,7 @@
 import { Box, Card, CardActionArea } from "@mui/material";
 import { CardTitlePokemon } from "../atom/cardTitlePokemon";
 import { Line } from "../atom/lines";
-import { PokemonContentText } from "../atom/MoveText";
+import { PokemonContentText } from "../atom/contentText";
 import { PokemonCardImg } from "../atom/pokemonCardImg";
 
 import { firstUpercase } from "../tools/tools";

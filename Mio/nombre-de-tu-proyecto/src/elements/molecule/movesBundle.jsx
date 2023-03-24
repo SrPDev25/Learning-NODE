@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { PokemonContentText } from "../atom/MoveText";
+import { PokemonContentText } from "../atom/contentText";
 
 /**Check if the pokemon have 0,1 or 2 min moves */
 const checkMoves = (moves) => {

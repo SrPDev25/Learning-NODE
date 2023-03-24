@@ -22,10 +22,16 @@ export const SetMaxSize = (maxSize) => {
     maxSize: maxSize,//in other cases with more than one value use an json
   };
 };
+export const Start = () => {
+  return {
+    type: "Start",
+  };
+};
 
 const initialState = {
   set: 0,
   maxSize: 0,
+  initialize:0,
 };
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -54,6 +60,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         maxSize: action.maxSize,
+      };
+      case "Start":
+      return {
+        ...state,
+        set:0,
+        initialize:1
       };
     default:
       return state;
