@@ -16,7 +16,7 @@ export const RangeButtonText=()=>{
     if (maxRange > data.maxSize) maxRange = data.maxSize;
 
     return (
-      <p style={{ fontSize: "20px", transform: "translateY(60%)" }}>
+      <p style={{ fontSize: "20px", transform: "translateY(60%)", width:"150px" }}>
         {minRange}-{maxRange}/{data.maxSize}
       </p>
     );

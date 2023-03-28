@@ -16,10 +16,10 @@ export const SwitchSetButtons = () => {
 
   return (
     <div className="alignCenterTransform">
-      <Box display="flex" alignItems="center">
-        <ButtonAction text="prev" action={actionLast} />
-        <RangeButtonText/>
-        <ButtonAction text="next" action={actionNext} />
+      <Box display="flex" alignItems="center" gap={5} justifyContent="center">
+        <ButtonAction text="prev"  style={{flexShrink:"0"}} action={actionLast} />
+        <RangeButtonText style={{flexShrink:"0"}}/>
+        <ButtonAction text="next" style={{flexShrink:"0"}} action={actionNext} />
       </Box>
     </div>
   );

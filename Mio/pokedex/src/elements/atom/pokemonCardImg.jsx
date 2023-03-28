@@ -25,10 +25,11 @@ const useStyle = makeStyles({
   },
 });
 
-export const PokemonCardImg = (url, name) => {
+export const PokemonCardImg = (data, name) => {
   /**You have to call the field in a parameter to use it */
   const classNames = useStyle();
   const alt = "Sprite de " + { name };
+
   return (
     <div className={classNames.root}>
       <CardMedia
@@ -36,7 +37,7 @@ export const PokemonCardImg = (url, name) => {
         component="img"
         alt={alt}
         height="80"
-        image={url.url}
+        image={data.url ? data.url : "https://www.pokencyclopedia.info/sprites/misc/spr_substitute/art__substitute.png"}
       />
     </div>
   );
