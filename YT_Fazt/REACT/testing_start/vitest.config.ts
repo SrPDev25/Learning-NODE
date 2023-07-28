@@ -33,6 +33,17 @@ import {defineConfig} from 'vitest/config'
 export default defineConfig({
     //Los glob patterns que estan indicados, son los que vienen por defecto si no se incluyesen en el test:{}
     test:{
+        /**environment, type of test you want to do
+         * --Default
+         * 'node'
+         * --Browser-like
+         * 'jsdom' | 'happy-dom'
+         * --Building edge functions
+         * ---Estas son pruebas realizadas en servidores para probar, rendimiento, cache, seguridad, transformación multimedia...
+         * ---Unos tests más centrados en el rendimiento final
+         * 'edge-runtime'
+         */
+        environment: 'jsdom',
         /**Se incluye los archivos que vas a poder se testeados
          * Este es un string[] que tiene "glob patterns"
          * Prioridad?
