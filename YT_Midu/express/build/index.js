@@ -3,7 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+//Index sinedo la principal direccion de la api
 const express_1 = __importDefault(require("express"));
+//import diaryRouter from './routes/diaries'
+//Se crea instacia de experss
+//entiendo instancia como el objeto que tiene las funciones nativas de la api
 const app = (0, express_1.default)();
 //Middleware
 /*Los middleware son de de alguna manera los conectores
@@ -16,11 +20,21 @@ const app = (0, express_1.default)();
  * e indicar a la app que la informacion recibida se use como un json
  */
 app.use(express_1.default.json());
+//El puerto del servidor al que va a estar escuchando la api
+//TODO poner el puerto en variable de entorno
 const PORT = 3000;
+//Esto ya se puede determinar como un endpoint(get)
 app.get('/ping', (_req, res) => {
     console.log('Perdi el tren :(');
-    res.send('pero que miras, bobo');
+    res.send('pero que miras, boboo');
 });
+app.get('/api/diaries', (_req, res) => {
+    res.send('efarda');
+});
+//Routes use
+//app.use('/api/diaries', diaryRouter)
+//Listener
+//Inicia la escucha por parte de la instacia de express en un puerto concreto
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

@@ -1,6 +1,8 @@
 //Index sinedo la principal direccion de la api
 import express from 'express'
 
+import diaryRouter from './routes/diaries'
+
 //Se crea instacia de experss
 //entiendo instancia como el objeto que tiene las funciones nativas de la api
 const app = express()
@@ -23,9 +25,13 @@ const PORT = 3000
 //Esto ya se puede determinar como un endpoint(get)
 app.get('/ping', (_req, res) => {
     console.log('Perdi el tren :(')
-    res.send('pero que miras, bobo')
+    res.send('pero que miras, boboo')
 })
 
+//Routes use
+app.use('/api/diaries', diaryRouter)
+
+//Listener
 //Inicia la escucha por parte de la instacia de express en un puerto concreto
 app.listen(PORT, ()=> {
     console.log(`Server running on port ${PORT}`)
