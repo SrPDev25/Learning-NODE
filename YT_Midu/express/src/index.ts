@@ -23,7 +23,7 @@ app.use(express.json())
 const PORT = 3000
 
 //Esto ya se puede determinar como un endpoint(get)
-app.get('/ping', (_req, res) => {
+app.get('/ping', (_, res) => {
     console.log('Perdi el tren :(')
     res.send('pero que miras, boboo')
 })

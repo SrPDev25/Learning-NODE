@@ -1,4 +1,5 @@
 import express from 'express'
+import * as diaryServices from '../services/diaryServices'
 
 //Instacia dentro de express para indicar una ruta
 const router = express.Router()
@@ -8,7 +9,15 @@ const router = express.Router()
  * Devuelve en la raiz de daires todos los diarios
  */
 router.get('/', (_req, res) => {
-    res.send('Te lo doy to')
+	res.send(diaryServices.getEntriesWithoutSensitiveInfo())
+})
+
+//Ruta con id, donde req recopila la id
+router.get('/:id', (req, res) => {
+	const diary = diaryServices.findById(+req.params.id)
+	return diary != null
+		? res.send(diary)
+		: res.sendStatus(404)
 })
 
 /**
