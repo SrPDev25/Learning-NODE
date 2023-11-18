@@ -1,0 +1,154 @@
+[
+    {
+        "_id": "PartyId1",
+        "simpleId": "62374",
+        "gameConfig": {
+            "minPlayers": 4,
+            "maxPlayers": 10
+        },
+        "gamePhase": "words",
+        "wordInGame": "perro",
+        "players": [
+            {
+                "_id": "IdAleatorio1",
+                "name": "Hit",
+                "state": "master",
+                "rol": "master"
+            },
+            {
+                "_id": "IdAleatorio2",
+                "name": "emma",
+                "state": "alive",
+                "rol": "player",
+                "infiltrator": true
+            },
+            {
+                "_id": "IdAleatorio3",
+                "name": "fran",
+                "state": "alive",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio3",
+                "name": "felipe",
+                "state": "alive",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio4",
+                "name": "anan",
+                "state": "dead",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio5",
+                "name": "Giralda",
+                "state": "dead",
+                "rol": "player"
+            }
+        ]
+    },
+    {
+        "_id": "PartyId2",
+        "simpleId": "12363",
+        "gameConfig": {
+            "minPlayers": 3,
+            "maxPlayers": 10
+        },
+        "gamePhase": "voting",
+        "wordInGame": "w3412908sd",
+        "players": [
+            {
+                "_id": "IdAleatorio6",
+                "name": "Yo",
+                "state": "master",
+                "rol": "master"
+            },
+            {
+                "_id": "IdAleatorio7",
+                "name": "Amongus",
+                "state": "alive",
+                "rol": "player",
+                "infiltrator": true
+            },
+            {
+                "_id": "IdAleatorio8",
+                "name": "fran",
+                "state": "alive",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio9",
+                "name": "alex",
+                "state": "alive",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio10",
+                "name": "el",
+                "state": "dead",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio11",
+                "name": "capo",
+                "state": "alive",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio12",
+                "name": "Giralda",
+                "state": "alive",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio13",
+                "name": "Pepita",
+                "state": "alive",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio14",
+                "name": "Traidor",
+                "state": "alive",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio15",
+                "name": "Pepa",
+                "state": "alive",
+                "rol": "player"
+            }
+            
+        ]
+    },
+    {
+        "_id": "PartyId3",
+        "simpleId": "93847",
+        "gameConfig": {
+            "minPlayers": 7,
+            "maxPlayers": 15
+        },
+        "gamePhase": "recruitment",
+        "players": [
+            {
+                "_id": "IdAleatorio16",
+                "name": "Daniel",
+                "state": "master",
+                "rol": "master"
+            },
+            {
+                "_id": "IdAleatorio17",
+                "name": "Ortega",
+                "state": "alive",
+                "rol": "player"
+            },
+            {
+                "_id": "IdAleatorio18",
+                "name": "Andres",
+                "state": "alive",
+                "rol": "player"
+            }
+        ]
+    }
+]
