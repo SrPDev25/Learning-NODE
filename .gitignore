@@ -9,6 +9,9 @@
 **/.cache/**
 **/babel-loader
 
+#build
+**/build/**
+
 # testing
 /coverage
 
