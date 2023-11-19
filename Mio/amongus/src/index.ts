@@ -16,7 +16,7 @@ const app = express()
 /**Este middleware se encarga de recibir el body
  * e indicar a la app que la informacion recibida se use como un json
  */
-app.use(express.json()) 
+app.use(express.json())
 
 //El puerto del servidor al que va a estar escuchando la api
 //TODO poner el puerto en variable de entorno
@@ -24,8 +24,8 @@ const PORT = 3000
 
 //Esto ya se puede determinar como un endpoint(get)
 app.get('/ping', (_, res) => {
-    console.log('Perdi el tren :(')
-    res.send('pero que miras, boboo')
+	console.log('Perdi el tren :(')
+	res.send('pero que miras, boboo')
 })
 
 //Routes use
@@ -33,6 +33,6 @@ app.use('/api/diaries', diaryRouter)
 
 //Listener
 //Inicia la escucha por parte de la instacia de express en un puerto concreto
-app.listen(PORT, ()=> {
-    console.log(`Server running on port ${PORT}`)
+app.listen(PORT, () => {
+	console.log(`Server running on port ${PORT}`)
 })

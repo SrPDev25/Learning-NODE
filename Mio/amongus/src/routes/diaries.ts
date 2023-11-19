@@ -1,5 +1,5 @@
 import express from 'express'
-import * as diaryServices from '../services/diaryServices'
+import * as diaryServices from '../services/diariesServices'
 
 //Instacia dentro de express para indicar una ruta
 const router = express.Router()
@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
  * inserta un nuevo diario
  */
 router.post('/', (_req, res) => {
-    res.send('Me lo queo to')
+	res.send('Me lo queo to')
 })
 
 //Devuelve la ruta despues de configurada
