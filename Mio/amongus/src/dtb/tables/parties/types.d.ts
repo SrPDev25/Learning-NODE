@@ -1,5 +1,8 @@
 import { GamePhaseEnum } from "./enums"
 
+/**
+ * Party info structure
+ */
 export type Party = {
     /**Database id of the party */
     _id: string,

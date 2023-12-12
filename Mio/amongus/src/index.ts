@@ -2,6 +2,7 @@
 import express from 'express'
 
 import diaryRouter from './routes/diaries'
+import authRouter from './routes/auth/infraestructure/auth.router'
 
 //Se crea instacia de experss
 //entiendo instancia como el objeto que tiene las funciones nativas de la api
@@ -22,11 +23,8 @@ app.use(express.json())
 //TODO poner el puerto en variable de entorno
 const PORT = 3000
 
-//Esto ya se puede determinar como un endpoint(get)
-app.get('/ping', (_, res) => {
-	console.log('Perdi el tren :(')
-	res.send('pero que miras, boboo')
-})
+//marca la ruta de la api para los servicios de autenticacion
+app.use('/auth', authRouter)
 
 //Routes use
 app.use('/api/diaries', diaryRouter)
