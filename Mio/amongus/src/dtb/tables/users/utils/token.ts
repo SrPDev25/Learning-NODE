@@ -1,7 +1,6 @@
-
-import { isNotEmpty } from "../../../utils/common";
-import { isString } from "../../../utils/primitive/isString";
-import { ValidationType } from "../../../utils/validation.type";
+import { isNotEmpty } from "../../../../utils/common";
+import { isString } from "../../../../utils/primitive/isString";
+import { ValidationType } from "../../../../utils/validation.type";
 
 
 /**
@@ -11,11 +10,13 @@ import { ValidationType } from "../../../utils/validation.type";
  */
 export const isTokenValid = (token: unknown): string | undefined => {
 	let error = undefined;
+	//ValidationsOrder
 	const checks: ValidationType[] = [	
 		isNotEmpty,
 		isString,
 		isToken
 	];
+	//Check validations until one fail
 	checks.every((check: ValidationType) => {
 		const result = check(token);
 		if(result){

@@ -8,5 +8,5 @@ export type User = {
     /**Authorization token */
     token: string;
     /**Party _id */
-    party?: string;
+    party: string;
 }

@@ -10,38 +10,32 @@
         "wordInGame": "perro",
         "players": [
             {
-                "_id": "IdAleatorio1",
+                "_id": 0,
                 "name": "Hit",
                 "state": "master",
                 "rol": "master"
             },
             {
-                "_id": "IdAleatorio2",
+                "_id": 1,
                 "name": "emma",
                 "state": "alive",
                 "rol": "player",
                 "infiltrator": true
             },
             {
-                "_id": "IdAleatorio3",
+                "_id": 2,
                 "name": "fran",
                 "state": "alive",
                 "rol": "player"
             },
             {
-                "_id": "IdAleatorio3",
-                "name": "felipe",
-                "state": "alive",
-                "rol": "player"
-            },
-            {
-                "_id": "IdAleatorio4",
+                "_id": 3,
                 "name": "anan",
                 "state": "dead",
                 "rol": "player"
             },
             {
-                "_id": "IdAleatorio5",
+                "_id": 4,
                 "name": "Giralda",
                 "state": "dead",
                 "rol": "player"
@@ -59,62 +53,62 @@
         "wordInGame": "w3412908sd",
         "players": [
             {
-                "_id": "IdAleatorio6",
+                "_id": 5,
                 "name": "Yo",
                 "state": "master",
                 "rol": "master"
             },
             {
-                "_id": "IdAleatorio7",
+                "_id": 6,
                 "name": "Amongus",
                 "state": "alive",
                 "rol": "player",
                 "infiltrator": true
             },
             {
-                "_id": "IdAleatorio8",
+                "_id": 7,
                 "name": "fran",
                 "state": "alive",
                 "rol": "player"
             },
             {
-                "_id": "IdAleatorio9",
+                "_id": 8,
                 "name": "alex",
                 "state": "alive",
                 "rol": "player"
             },
             {
-                "_id": "IdAleatorio10",
+                "_id": 9,
                 "name": "el",
                 "state": "dead",
                 "rol": "player"
             },
             {
-                "_id": "IdAleatorio11",
+                "_id": 10,
                 "name": "capo",
                 "state": "alive",
                 "rol": "player"
             },
             {
-                "_id": "IdAleatorio12",
+                "_id": 11,
                 "name": "Giralda",
                 "state": "alive",
                 "rol": "player"
             },
             {
-                "_id": "IdAleatorio13",
+                "_id": 12,
                 "name": "Pepita",
                 "state": "alive",
                 "rol": "player"
             },
             {
-                "_id": "IdAleatorio14",
+                "_id": 13,
                 "name": "Traidor",
                 "state": "alive",
                 "rol": "player"
             },
             {
-                "_id": "IdAleatorio15",
+                "_id": 14,
                 "name": "Pepa",
                 "state": "alive",
                 "rol": "player"
@@ -132,19 +126,19 @@
         "gamePhase": "recruitment",
         "players": [
             {
-                "_id": "IdAleatorio16",
+                "_id": 15,
                 "name": "Daniel",
                 "state": "master",
                 "rol": "master"
             },
             {
-                "_id": "IdAleatorio17",
+                "_id": 16,
                 "name": "Ortega",
                 "state": "alive",
                 "rol": "player"
             },
             {
-                "_id": "IdAleatorio18",
+                "_id": 17,
                 "name": "Andres",
                 "state": "alive",
                 "rol": "player"
