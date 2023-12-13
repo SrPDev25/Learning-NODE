@@ -1,5 +1,5 @@
 import express from 'express'
-import { playerAutenticacion } from '../app/services';
+import { playerAutenticacion } from '../controllers/controllers';
 
 
 //Instacia dentro de express para indicar una ruta

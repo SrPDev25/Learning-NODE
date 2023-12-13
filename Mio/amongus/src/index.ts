@@ -2,7 +2,8 @@
 import express from 'express'
 
 import diaryRouter from './routes/diaries'
-import authRouter from './routes/auth/infraestructure/auth.router'
+import authRouter from './routes/auth/routes/auth.router'
+import partyRouter from './routes/party/routes/router'
 
 //Se crea instacia de experss
 //entiendo instancia como el objeto que tiene las funciones nativas de la api
@@ -23,8 +24,10 @@ app.use(express.json())
 //TODO poner el puerto en variable de entorno
 const PORT = 3000
 
-//marca la ruta de la api para los servicios de autenticacion
-app.use('/auth', authRouter)
+//Auth route
+app.use('/auth', authRouter);
+//Parties route
+app.use('/party', partyRouter);
 
 //Routes use
 app.use('/api/diaries', diaryRouter)

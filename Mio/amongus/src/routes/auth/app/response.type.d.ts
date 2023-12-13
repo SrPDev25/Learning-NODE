@@ -1,6 +1,8 @@
-import { IAuthorizationShopPlayer, IAuthorizationUser } from "../core/type";
+import { IAuthorizationUser } from "../core/type";
 
 /**
  * Response of authorization
  */
-export type IGetAutentification = IAuthorizationUser & IAuthorizationShopPlayer;
+export type IGetAutentification = IAuthorizationUser & {
+    playerInfo: Player
+};

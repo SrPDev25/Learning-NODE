@@ -1,36 +1,27 @@
-import { Request, Response } from "express";
 import { isTokenValid } from "../../../dtb/tables/users/utils/token";
 import { AuthorizationServices } from "../core/provider";
 import { IGetAutentification } from "./response.type";
-import ErrorStatus from "../../../utils/Error/ErrorStatus";
+import ErrorStatus from "../../../common/Error/ErrorStatus";
 
 
 /**
- * Get the autentification of a player
+ * Check user autentication and 
  * @header {User['token']} token user's token
- * @returns 
+ * @returns {IGetAutentification} user's general and player information
  */
-export const playerAutenticacion = async (req: Request, res: Response) => {
-	try {
-		//Params validation
-		const badRequest = isTokenValid(req.headers.token);
-		if (badRequest)
-			throw new ErrorStatus(400, badRequest);
-		
-		//Database request
-		const user = await AuthorizationServices.checkUserToken(req.headers.token as string);
-		const party = await AuthorizationServices.getPartyPlayerInfo(user._id, user.party);
-		
-		//Information filter
-		const autentificationInfo: IGetAutentification = { ...user, ...party };
+export const getPlayerAutentication = async (userToken: unknown): Promise<IGetAutentification> => {
+	//Params validation
+	const badRequest = isTokenValid(userToken);
+	if (badRequest)
+		throw new ErrorStatus(400, badRequest);
 
-		//Response
-		return res.status(200).send(autentificationInfo);
-	} catch (error) {
-		if (error instanceof ErrorStatus) {
-			return res.status(error.status).send(error.message);
-		} else {
-			return res.status(500).send('Internal server error');
-		}
-	}
+	//Database request
+	const user = await AuthorizationServices.checkUserToken(userToken as string);
+	const player = await AuthorizationServices.getPartyPlayerInfo(user._id, user.party);
+
+	//Information filter
+	const autentificationInfo: IGetAutentification = { ...user, playerInfo: player};
+
+	//Response
+	return autentificationInfo;
 };
