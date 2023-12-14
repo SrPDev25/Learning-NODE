@@ -114,7 +114,43 @@
                 "rol": "player"
             }
             
-        ]
+        ],
+        "votePhaseData": {
+            "votes": [
+                {
+                    "player": 6,
+                    "vote": 7
+                },
+                {
+                    "player": 7,
+                    "vote": 6
+                },
+                {
+                    "player": 8,
+                    "vote": 6
+                },
+                {
+                    "player": 10,
+                    "vote": 6
+                },
+                {
+                    "player": 11,
+                    "vote": 11
+                },
+                {
+                    "player": 12,
+                    "vote": 6
+                },
+                {
+                    "player": 13,
+                    "vote": null
+                },
+                {
+                    "player": 14,
+                    "vote": null
+                }
+            ]
+        }
     },
     {
         "_id": "PartyId3",

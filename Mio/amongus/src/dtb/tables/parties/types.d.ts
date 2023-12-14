@@ -58,3 +58,10 @@ export type Player = {
      */
     rol?: PlayerRolEnum
 }
+
+export type VotePhaseData = {
+    votes: {
+        player: Player['_id'],
+        vote?: Player['_id'] | null
+    }[]
+}
