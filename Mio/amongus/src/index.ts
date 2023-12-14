@@ -1,7 +1,6 @@
 //Index sinedo la principal direccion de la api
 import express from 'express'
 
-import diaryRouter from './routes/diaries'
 import authRouter from './routes/auth/routes/auth.router'
 import partyRouter from './routes/party/routes/router'
 
@@ -29,8 +28,6 @@ app.use('/auth', authRouter);
 //Parties route
 app.use('/party', partyRouter);
 
-//Routes use
-app.use('/api/diaries', diaryRouter)
 
 //Listener
 //Inicia la escucha por parte de la instacia de express en un puerto concreto
