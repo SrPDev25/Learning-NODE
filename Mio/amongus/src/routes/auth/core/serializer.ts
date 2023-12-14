@@ -1,15 +1,15 @@
 
 import { Player } from "../../../dtb/tables/parties/types";
 import { User } from "../../../dtb/tables/users/user.type";
-import { IAuthorizationShopPlayer, IAuthorizationUser as UserAuthorization } from "./type";
+import { IAuthorizationShopPlayer, IUserInfo } from "./type";
 
 
 /**
- * Parse user info to AuthorizationResponse filtered
+ * Parse user info without token
  * @param {User} user user values will parsed
- * @returns {UserAuthorization} filtered user
+ * @returns {IUserInfo} filtered user
  */
-export const parseUserToUserAuthorization = (user: User): UserAuthorization => {
+export const parseUserToUserAuthorization = (user: User): IUserInfo => {
 	const { _id, party } = user;
 	return { _id, party };
 };

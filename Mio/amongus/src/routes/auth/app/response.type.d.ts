@@ -1,8 +1,9 @@
-import { IAuthorizationUser } from "../core/type";
+import { Player } from "../../../dtb/tables/parties/types";
+import { IUserInfo } from "../core/type";
 
 /**
  * Response of authorization
  */
-export type IGetAutentification = IAuthorizationUser & {
+export type IUserAuthorization = IUserInfo & {
     playerInfo: Player
 };

@@ -49,7 +49,7 @@
             "minPlayers": 3,
             "maxPlayers": 10
         },
-        "gamePhase": "voting",
+        "gamePhase": "votingResults",
         "wordInGame": "w3412908sd",
         "players": [
             {

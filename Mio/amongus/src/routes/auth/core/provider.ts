@@ -4,7 +4,7 @@ import { Users } from "../../../dtb/tables/users/Users";
 import { User } from "../../../dtb/tables/users/user.type";
 import ErrorStatus from "../../../common/Error/ErrorStatus";
 import { parseUserToUserAuthorization } from "./serializer";
-import { IAuthorizationUser } from "./type";
+import { IUserInfo } from "./type";
 
 
 export class AuthorizationServices {
@@ -12,9 +12,9 @@ export class AuthorizationServices {
 	/**
 	 * Check if a user exist and return it
 	 * @param {string} token 
-	 * @returns {Promise<IAuthorizationUser>}
+	 * @returns {Promise<IUserInfo>}
 	 */
-	static checkUserToken(token: string): Promise<IAuthorizationUser> {
+	static checkUserToken(token: string): Promise<IUserInfo> {
 		return Users.getUserByToken(token)
 			.then((user: User | undefined) => {
 				if (user)

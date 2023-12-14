@@ -1,15 +1,15 @@
 import { isTokenValid } from "../../../dtb/tables/users/utils/token";
 import { AuthorizationServices } from "../core/provider";
-import { IGetAutentification } from "./response.type";
+import { IUserAuthorization } from "./response.type";
 import ErrorStatus from "../../../common/Error/ErrorStatus";
 
 
 /**
  * Check user autentication and 
  * @header {User['token']} token user's token
- * @returns {IGetAutentification} user's general and player information
+ * @returns {IUserAuthorization} user's general and player information
  */
-export const getPlayerAutentication = async (userToken: unknown): Promise<IGetAutentification> => {
+export const getUserAuthorization = async (userToken: unknown): Promise<IUserAuthorization> => {
 	//Params validation
 	const badRequest = isTokenValid(userToken);
 	if (badRequest)
@@ -20,7 +20,7 @@ export const getPlayerAutentication = async (userToken: unknown): Promise<IGetAu
 	const player = await AuthorizationServices.getPartyPlayerInfo(user._id, user.party);
 
 	//Information filter
-	const autentificationInfo: IGetAutentification = { ...user, playerInfo: player};
+	const autentificationInfo: IUserAuthorization = { ...user, playerInfo: player};
 
 	//Response
 	return autentificationInfo;
