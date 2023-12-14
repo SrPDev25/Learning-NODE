@@ -1,5 +1,5 @@
 import express from 'express'
-import { partyRouterFilter, playerPartyInfo } from '../controllers/controllers';
+import { partyRouterAuthorization, playerPartyInfo } from '../controllers/controllers';
 
 //Instacia dentro de express para indicar una ruta
 const router = express.Router();
@@ -9,7 +9,7 @@ router.use('/', async (_req, _res, next) => next());
 
 
 // Party authorization filter
-router.use('/:partyId', partyRouterFilter);
+router.use('/:partyId', partyRouterAuthorization);
 
 /**
  * @description Get party information, filtered by player authorization

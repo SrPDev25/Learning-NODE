@@ -14,7 +14,7 @@ import { isPartyId } from "../../../dtb/tables/parties/utils/party";
  * @param {NextFunction} next 
  * @returns
  */
-export const partyRouterFilter = async (req: IPartyRouterRequest, res: Response, next: NextFunction) => {
+export const partyRouterAuthorization = async (req: IPartyRouterRequest, res: Response, next: NextFunction) => {
 	try {
 		//Check partyId format
 		const checkPartyId = isPartyId(req.params.partyId);

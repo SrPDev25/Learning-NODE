@@ -8,6 +8,7 @@ const router = express.Router();
 /**
  * Get
  * Devuelve la información que necesita el usuario para usar la aplicacións
+ * @get
  * @headers {string} token
  * @returns {IUserInfos}
  */
