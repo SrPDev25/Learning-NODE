@@ -1,4 +1,4 @@
-import { Party } from "../../../../dtb/tables/parties/types";
+import { IParty } from "../../../../dtb/tables/parties/types";
 import { IUserAuthorization } from "../../../auth/app/response.type";
 import { IDefaultPhaseFilter, IVotingPhaseFilter, IWordsPhaseFilter } from "./gamePhaseFilter.type";
 import { filterOtherPlayersInfo } from "./partyInformationFilters";
@@ -8,10 +8,10 @@ import { filterOtherPlayersInfo } from "./partyInformationFilters";
 /**
  * Party filter information for general gamePhase
  * @param {IUserAuthorization} player user authorization
- * @param {Party} party this party
+ * @param {IParty} party this party
  * @returns {IDefaultPhaseFilter}
  */
-export const defaultPhaseFilter = (player: IUserAuthorization, party: Party): IDefaultPhaseFilter => {
+export const defaultPhaseFilter = (player: IUserAuthorization, party: IParty): IDefaultPhaseFilter => {
 	const clonedParty = { ...party };
 	
 	//Filter players info
@@ -26,10 +26,10 @@ export const defaultPhaseFilter = (player: IUserAuthorization, party: Party): ID
 /**
  * Party filter information for general gamePhase
  * @param {IUserAuthorization} player user authorization
- * @param {Party} party this party
+ * @param {IParty} party this party
  * @returns {IWordsPhaseFilter}
  */
-export const wordsPhaseFilter = (player: IUserAuthorization, party: Party): IWordsPhaseFilter => {
+export const wordsPhaseFilter = (player: IUserAuthorization, party: IParty): IWordsPhaseFilter => {
 	const clonedParty = { ...party };
 	//Filter players info
 	filterOtherPlayersInfo(clonedParty, player._id);
@@ -46,10 +46,10 @@ export const wordsPhaseFilter = (player: IUserAuthorization, party: Party): IWor
 /**
  * Party filter information for general gamePhase
  * @param {IUserAuthorization} player user authorization
- * @param {Party} party this party
+ * @param {IParty} party this party
  * @returns {IVotingPhaseFilter}
  */
-export const votingPhaseFilter = (player: IUserAuthorization, party: Party): IVotingPhaseFilter => {
+export const votingPhaseFilter = (player: IUserAuthorization, party: IParty): IVotingPhaseFilter => {
 	const clonedParty = { ...party };
 	//Filter players info
 	filterOtherPlayersInfo(clonedParty, player._id);
@@ -92,10 +92,10 @@ export const votingPhaseFilter = (player: IUserAuthorization, party: Party): IVo
 /**
  * Party filter information for general gamePhase
  * @param {IUserAuthorization} player user authorization
- * @param {Party} party this party
+ * @param {IParty} party this party
  * @returns {IVotingPhaseFilter}
  */
-export const votingResultsPhaseFilter = (player: IUserAuthorization, party: Party): IVotingPhaseFilter => {
+export const votingResultsPhaseFilter = (player: IUserAuthorization, party: IParty): IVotingPhaseFilter => {
 	const clonedParty = { ...party };
 	
 	//Filter players info

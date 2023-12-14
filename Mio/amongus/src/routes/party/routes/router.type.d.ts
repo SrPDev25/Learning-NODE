@@ -1,5 +1,5 @@
 import { Request } from "express";
-import { Party } from "../../../dtb/tables/parties/types";
+import { IParty } from "../../../dtb/tables/parties/types";
 import { IUserAuthorization } from "../../auth/app/response.type";
 
 /**
@@ -7,7 +7,7 @@ import { IUserAuthorization } from "../../auth/app/response.type";
  */
 export type IPartyRequestMetaData = {
     userAuthorization?: IUserAuthorization,
-    playerParty?: Party
+    playerParty?: IParty
 };
 
 /**Router type + PartyContext */

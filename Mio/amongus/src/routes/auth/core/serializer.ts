@@ -1,25 +1,25 @@
 
-import { Player } from "../../../dtb/tables/parties/types";
-import { User } from "../../../dtb/tables/users/user.type";
+import { IPlayer } from "../../../dtb/tables/parties/types";
+import { IUser } from "../../../dtb/tables/users/user.type";
 import { IAuthorizationShopPlayer, IUserInfo } from "./type";
 
 
 /**
  * Parse user info without token
- * @param {User} user user values will parsed
+ * @param {IUser} user user values will parsed
  * @returns {IUserInfo} filtered user
  */
-export const parseUserToUserAuthorization = (user: User): IUserInfo => {
+export const parseUserToUserAuthorization = (user: IUser): IUserInfo => {
 	const { _id, party } = user;
 	return { _id, party };
 };
 
 /**
  * Parse player info to AuthorizationResponse filtered
- * @param {Player} player player values will parsed
+ * @param {IPlayer} player player values will parsed
  * @returns {IAuthorizationShopPlayer} filtered player
  */
-export const parsePlayerToIShopPlayerAuthorization = (player: Player): IAuthorizationShopPlayer => {
+export const parsePlayerToIShopPlayerAuthorization = (player: IPlayer): IAuthorizationShopPlayer => {
 	const { name, state, rol } = player;
 	return { name, state, rol };
 };

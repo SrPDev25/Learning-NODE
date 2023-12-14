@@ -1,7 +1,7 @@
 import { Parties } from "../../../dtb/tables/parties/Parties";
-import { Party, Player } from "../../../dtb/tables/parties/types";
+import { IParty, IPlayer } from "../../../dtb/tables/parties/types";
 import { Users } from "../../../dtb/tables/users/Users";
-import { User } from "../../../dtb/tables/users/user.type";
+import { IUser } from "../../../dtb/tables/users/user.type";
 import ErrorStatus from "../../../common/Error/ErrorStatus";
 import { parseUserToUserAuthorization } from "./serializer";
 import { IUserInfo } from "./type";
@@ -16,7 +16,7 @@ export class AuthorizationServices {
 	 */
 	static checkUserToken(token: string): Promise<IUserInfo> {
 		return Users.getUserByToken(token)
-			.then((user: User | undefined) => {
+			.then((user: IUser | undefined) => {
 				if (user)
 					return parseUserToUserAuthorization(user);
 				else
@@ -31,7 +31,7 @@ export class AuthorizationServices {
 	 * @throws {ErrorStatus} 404 if party or player not found
 	 * @returns 
 	 */
-	static async getPartyPlayerInfo(userId: Player['_id'], partyId: Party['_id']): Promise<Player> {
+	static async getPartyPlayerInfo(userId: IPlayer['_id'], partyId: IParty['_id']): Promise<IPlayer> {
 		const party = await Parties.getPartyById(partyId);
 		if (party){
 			const player = party.players.find(player => player._id === userId);

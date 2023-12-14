@@ -1,8 +1,8 @@
-import { Player } from "../../../dtb/tables/parties/types";
-import { User } from "../../../dtb/tables/users/user.type";
+import { IPlayer } from "../../../dtb/tables/parties/types";
+import { IUser } from "../../../dtb/tables/users/user.type";
 
 
 /** User public info */
-export type IUserInfo = Pick<User, "_id" | "party">;
+export type IUserInfo = Pick<IUser, "_id" | "party">;
 
-export type IAuthorizationShopPlayer = Pick<Player, 'name' | 'state' | 'rol'>;
+export type IAuthorizationShopPlayer = Pick<IPlayer, 'name' | 'state' | 'rol'>;

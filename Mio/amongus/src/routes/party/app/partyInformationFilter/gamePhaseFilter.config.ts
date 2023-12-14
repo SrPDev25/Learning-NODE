@@ -1,5 +1,5 @@
 import { GamePhaseEnum } from "../../../../dtb/tables/parties/enums";
-import { Party } from "../../../../dtb/tables/parties/types";
+import { IParty } from "../../../../dtb/tables/parties/types";
 import { IUserAuthorization } from "../../../auth/app/response.type";
 import { defaultPhaseFilter, votingPhaseFilter, votingResultsPhaseFilter, wordsPhaseFilter } from "./gamePhaseFilter";
 
@@ -7,7 +7,7 @@ import { defaultPhaseFilter, votingPhaseFilter, votingResultsPhaseFilter, wordsP
 /**
  * Game phase's filter functions configuration
  */
-export const filterInfoConfig: Record<GamePhaseEnum, (player: IUserAuthorization, party: Party) => unknown> = {
+export const filterInfoConfig: Record<GamePhaseEnum, (player: IUserAuthorization, party: IParty) => unknown> = {
 	[GamePhaseEnum.RECRUITMENT]: defaultPhaseFilter,
 	[GamePhaseEnum.STARTING]: defaultPhaseFilter,
 	[GamePhaseEnum.WORDS]: wordsPhaseFilter,

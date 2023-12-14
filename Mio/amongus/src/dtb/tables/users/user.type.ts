@@ -2,7 +2,7 @@
 /**
  * User at user database
  */
-export type User = {
+export type IUser = {
     /**_id at user database */
     _id: number;
     /**Authorization token */

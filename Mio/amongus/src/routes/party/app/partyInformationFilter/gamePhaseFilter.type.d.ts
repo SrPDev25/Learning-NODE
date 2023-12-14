@@ -1,15 +1,15 @@
-import { Party, Player } from "../../../../dtb/tables/parties/types";
+import { IParty, IPlayer } from "../../../../dtb/tables/parties/types";
 
 /** General type to info request */
-export type IDefaultPhaseFilter = Pick<Party, '_id' | 'simpleId' | 'gameConfig' | 'gamePhase' | 'players'>
+export type IDefaultPhaseFilter = Pick<IParty, '_id' | 'simpleId' | 'gameConfig' | 'gamePhase' | 'players'>
 
 /**
  * Words phase type to info request
  */
-export type IWordsPhaseFilter = Pick<Party, '_id' | 'simpleId' | 'gameConfig' | 'gamePhase' | 'players' | 'wordInGame'>
+export type IWordsPhaseFilter = Pick<IParty, '_id' | 'simpleId' | 'gameConfig' | 'gamePhase' | 'players' | 'wordInGame'>
 
 /** Filter at votingPhase */
-export type IVotingPhaseFilter = Pick<Party, '_id' | 'simpleId' | 'gameConfig' | 'gamePhase' | 'players' | 'wordInGame'> & {
+export type IVotingPhaseFilter = Pick<IParty, '_id' | 'simpleId' | 'gameConfig' | 'gamePhase' | 'players' | 'wordInGame'> & {
     votePhase: IPlayerVoteInfo
 }
 
@@ -22,11 +22,11 @@ export type IPlayerVoteInfo = {
      * null if player has voted blank
      * Player['_id'] if player has voted for someone
      */
-    playerVote?: Player['_id'] | null,
+    playerVote?: IPlayer['_id'] | null,
     /** Players can be voted */
     playerOptions?: {
         /** Player id */
-        player: Player['_id'] | null,
+        player: IPlayer['_id'] | null,
         /** Player votes for him */
         votes?: number
     }[],

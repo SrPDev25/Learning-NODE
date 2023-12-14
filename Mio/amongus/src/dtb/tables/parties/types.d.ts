@@ -3,29 +3,29 @@ import { GamePhaseEnum, PlayerRolEnum, PlayerStateEnum } from "./enums"
 /**
  * Party info structure
  */
-export type Party = {
+export type IParty = {
     /**Database id of the party */
     _id: string,
     /**Simple unique id with 6 characters to easily find the party */
     simpleId: string,
     /** Setted party config */
-    gameConfig: GameConfig,
+    gameConfig: IGameConfig,
     /** Phase of the game
      * @default 'recruitment'
      */
     gamePhase: GamePhaseEnum,
     /** Players info */
-    players: Player[],
+    players: IPlayer[],
     /** Current game word */
     wordInGame?: string,
     /** Vote phase necessary data */
-    votePhaseData?: VotePhaseData
+    votePhaseData?: IVotePhaseData
 }
 
 /**
  * Configuration of the game
  */
-export type GameConfig = {
+export type IGameConfig = {
     /** Min players at the game
      * @enum min 5
      */
@@ -37,7 +37,7 @@ export type GameConfig = {
 }
 
 /** Player object type at the party */
-export type Player = {
+export type IPlayer = {
     /**
      * User's data base id
      */
@@ -59,9 +59,9 @@ export type Player = {
     rol?: PlayerRolEnum
 }
 
-export type VotePhaseData = {
+export type IVotePhaseData = {
     votes: {
-        player: Player['_id'],
-        vote?: Player['_id'] | null
+        player: IPlayer['_id'],
+        vote?: IPlayer['_id'] | null
     }[]
 }

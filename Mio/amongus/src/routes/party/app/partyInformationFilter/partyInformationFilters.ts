@@ -1,12 +1,12 @@
-import { Party } from "../../../../dtb/tables/parties/types";
+import { IParty } from "../../../../dtb/tables/parties/types";
 
 
 /**
  * Filter players to show only the necessary information
- * @param {Party} party party object to change
+ * @param {IParty} party party object to change
  * @param {number} playerId this player's _id
  */
-export const filterOtherPlayersInfo = (party: Party, playerId: number): void => {
+export const filterOtherPlayersInfo = (party: IParty, playerId: number): void => {
 	party.players = party.players.map(player => {
 		//This player can see his information
 		if (player._id === playerId) {

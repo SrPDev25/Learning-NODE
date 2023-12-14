@@ -1,5 +1,5 @@
 import { isNotEmpty } from "../../../../utils/common";
-import { isString } from "../../../../utils/primitive/isString";
+import { isString } from "../../../../utils/primitive/string";
 import { ValidationType } from "../../../../utils/validation.type";
 
 
