@@ -11,9 +11,9 @@ export class Players {
 	 * Add a new player to a party
 	 * @param {IParty['_id']} partyId party to add player
 	 * @param {IPlayer} player  player to add
-	 * @returns {IParty | undefined} party with new player or undefined if party not found
+	 * @returns {IPlayer | undefined} party with new player or undefined if party not found
 	 */
-	static async addPlayer(partyId: IParty['_id'], player: Pick<IPlayer, '_id' | 'name' | 'rol'>): Promise<IParty | undefined> {
+	static async addPlayer(partyId: IParty['_id'], player: Pick<IPlayer, '_id' | 'name' | 'rol'>): Promise<IPlayer | undefined> {
 		//Find party
 		const party = fakePartyDataBase.find(party => party._id === partyId);
 
@@ -27,7 +27,7 @@ export class Players {
 	
 		if (party) {
 			party.players.push(newPlayer);
-			return { ...party };
+			return { ...newPlayer };
 		} else
 			return undefined;
 	}

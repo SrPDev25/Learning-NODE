@@ -3,20 +3,10 @@ import express from 'express'
 
 import authRouter from './routes/auth/routes/auth.router'
 import partyRouter from './routes/party/routes/router'
+import gameRouter from './routes/game/routes/router'
 
 //Se crea instacia de experss
-//entiendo instancia como el objeto que tiene las funciones nativas de la api
 const app = express()
-//Middleware
-/*Los middleware son de de alguna manera los conectores
- * se encargan de
- * la recepcion de datos
- * la expedicion de datos
- * y es el que manda esa informacion a controladores para que se maneje
- */
-/**Este middleware se encarga de recibir el body
- * e indicar a la app que la informacion recibida se use como un json
- */
 app.use(express.json())
 
 //El puerto del servidor al que va a estar escuchando la api
@@ -27,6 +17,8 @@ const PORT = 3000
 app.use('/auth', authRouter);
 //Parties route
 app.use('/party', partyRouter);
+//Game route
+app.use('/game', gameRouter);
 
 
 //Listener
